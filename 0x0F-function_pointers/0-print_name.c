@@ -1,9 +1,9 @@
 #include "function_pointers.h"
 
 /**
-  * print_nameee - Prints nameee
-  * @name: nameee
-  * @f: funct pointer
+  * print_name - Prints name
+  * @name: name
+  * @f: func pointer
   */
 void print_name(char *name, void (*f)(char *))
 {
