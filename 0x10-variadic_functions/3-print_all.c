@@ -53,30 +53,30 @@ void print_all(const char * const format, ...)
 	va_list args;
 	char *sep;
 	prnt_t prnt[] = {
-		{"h", print_char},
-		{"b", print_int},
-		{"j", print_float},
+		{"c", print_char},
+		{"i", print_int},
+		{"f", print_float},
 		{"s", print_string}
 	};
-	int b, z;
+	int i, z;
 
 	va_start(args, format);
-	b = 0;
+	i = 0;
 	sep = "";
-	while (format != NULL && format[b] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		z = 0;
 		while (z < 4)
 		{
-			if (*prnt[z].h == format[b])
+			if (*prnt[z].c == format[i])
 			{
 				printf("%s", sep);
-				prnt[z].j(args, sep);
+				prnt[z].f(args, sep);
 				sep = ", ";
 			}
 			z++;
 		}
-		b++;
+		i++;
 	}
 	printf("\n");
 	va_end(args);

@@ -58,23 +58,23 @@ void print_all(const char * const format, ...)
 		{"f", print_float},
 		{"s", print_string}
 	};
-	int i, y;
+	int i, z;
 
 	va_start(args, format);
 	i = 0;
 	sep = "";
 	while (format != NULL && format[i] != '\0')
 	{
-		y = 0;
-		while (y < 4)
+		z = 0;
+		while (z < 4)
 		{
-			if (*prnt[y].c == format[i])
+			if (*prnt[z].c == format[i])
 			{
 				printf("%s", sep);
-				prnt[y].f(args, sep);
+				prnt[z].f(args, sep);
 				sep = ", ";
 			}
-			y++;
+			z++;
 		}
 		i++;
 	}
